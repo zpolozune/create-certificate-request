@@ -11,10 +11,13 @@ metadata:
 # Skill Instructions
 1. Get the necessary information for the certificate request, including the FQDN, organization, country, state/province, and locality.
 2. Create the distinguished name (DN) string for the certificate using the collected information.
-3. Generate an ML-DSA-87 key pair.
+3. Generate an RSA-4096 key pair.
 4. Export the public key from the generated key pair.
 5. Create a certificate request using the distinguished name and the public key.
 6. Sign the certificate request with the private key.
-7. Save the certificate request to a file named after the FQDN with a `.csr` extension.
+7. Create the directories corresponding to the ones in the script file if they don't already exist.
+8. Save the certificate request to a file named after the FQDN with a `.csr` extension, another with the `.der` extension, another with the `.pem` extension, one with the `.req` extension, and finally one with the `.p10`. They should all be in the same directory.
 8. Confirm that the CSR file has been successfully created and contains the expected information.
-9. Inform the user the process is complete and print the location of the saved CSR file.
+9. Export the public key to the `C:\pki\keys\public\` directory with a filename corresponding to the FQDN and a `.pub` extension.
+10. Export the private key to the `C:\pki\keys\private\` directory with a filename corresponding to the FQDN and a `.key` extension.
+11. Inform the user the process is complete and print the location of the saved CSR file, as well as the locations of the exported public and private keys.

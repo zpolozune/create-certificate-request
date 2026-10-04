@@ -93,7 +93,13 @@ class SanHelper
 {
     /*      Properties      */
     private SubjectAlternativeNameBuilder _sanBuilder = new SubjectAlternativeNameBuilder();
-    public X509Extension? sanNames { get { return _sanBuilder.Build(); }, set; }
+    public X509Extension? sanNames { 
+        get 
+        { 
+            return _sanBuilder.Build(); 
+        } 
+        set; 
+    }
 
     /*      Constructor      */
     public SanHelper()
